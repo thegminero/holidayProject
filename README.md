@@ -56,9 +56,32 @@ sfdx force:org:open
  - Ensure that the user object has a custom field favorite holidays
 
 
-8. Open the User Holiday's App
+## Usage
+
+Navigate to the User Holidays App:
 
 ![Holiday Picker](/images/holidayApp.png)
 
+Open the Calendar:
 
-9. Enjoy!
+![Calendar](/images/holidayCalendar.png)
+
+Pick a date:
+
+![Chose Date](/images/holidayPicker.png)
+
+Select a tab to view dates per selected date / Month / Year:
+
+![Today](/images/holidayToday.png)
+
+![Month](/images/holidayMonth.png)
+
+![Year](/images/holidayYear.png)
+
+Select a holiday to add to favorites by selecting the Stateful Button:
+
+![Add To Favorites](/images/holdiaySelectedFavorite.png)
+
+To remove, re-select the same holiday from the holiday list. The holiday is added to your user's favorite list upon selection  (and removed accordingly)/
+
+
