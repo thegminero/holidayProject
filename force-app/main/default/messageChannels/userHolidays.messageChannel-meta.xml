@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This is a Lightning Message Channel for User selected Favorite holidays.</description>
+    <isExposed>true</isExposed>
+    <lightningMessageFields>
+        <description>This is a favorite holiday that is added or removed</description>
+        <fieldName>favorite_holidays</fieldName>
+    </lightningMessageFields>
+    <masterLabel>FafovriteHolidaysMessageChannel</masterLabel>
+</LightningMessageChannel>

@@ -1,0 +1,39 @@
+<template>
+    <div class="c-container slds-theme_default">
+        <lightning-layout horizontal-align="center" multiple-rows="false" class="x-large">
+            <lightning-layout-item flexibility="auto" padding="around-small" class="custom-box" size="12">
+                <div class="slds-p-around_medium lgc-bg">
+                    <lightning-layout >
+                        <lightning-layout-item padding="around-small">
+                            <p class="slds-text-title_caps slds-line-height_reset">{yearLabel}</p>
+                        </lightning-layout-item>
+                        <lightning-layout-item padding="around-small" >
+                            <lightning-helptext content="Select a date from the calendar to view holidays per day/month/year
+                        and add toyour favorites"></lightning-helptext>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item flexibility="auto" padding="around-small" class="custom-box" size="12">
+                <c-calendar onselected={handleSelectedDate}></c-calendar>
+            </lightning-layout-item>
+            <lightning-layout-item flexibility="auto" padding="around-small" class="custom-box" size="12">
+
+                <lightning-tabset variant="brand">
+                    <lightning-tab label="Selected Date">
+                        <c-holiday-list holidays={todayHolidays} not-found-label="No holidays found for selected date"></c-holiday-list>
+                    </lightning-tab>
+                    <lightning-tab label={monthLabel} title={monthLabel}>
+                        <c-holiday-list holidays={monthHolidays} not-found-label="No holidays found this month"></c-holiday-list>
+                    </lightning-tab>
+                    <lightning-tab label={yearLabel} title={yearLabel}>
+                        <c-holiday-list holidays={holidays} not-found-label="No holidays found this year"></c-holiday-list>
+                    </lightning-tab>
+                </lightning-tabset>
+            </lightning-layout-item>
+            <lightning-layout-item flexibility="auto" padding="around-small" class="custom-box" size="12">
+                <c-favorite-list></c-favorite-list>
+            </lightning-layout-item>
+        </lightning-layout>
+    </div>
+</template>

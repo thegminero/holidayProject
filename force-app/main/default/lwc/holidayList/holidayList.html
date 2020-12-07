@@ -1,0 +1,14 @@
+<template>
+    <template if:true={showHolidays}>
+        <div>
+            <template for:each={holidays} for:item="holiday">
+                <div key={holiday.name}>
+                    <c-holiday-tile day={holiday} ontogglefavorite={toggleFavorite}></c-holiday-tile>
+                </div>
+            </template>
+        </div>
+    </template>
+    <template if:false={showHolidays}>
+        <c-holiday-not-found not-found-label={notFoundLabel}></c-holiday-not-found>
+    </template>
+</template>

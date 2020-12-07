@@ -1,0 +1,15 @@
+<template>
+    <div class="slds-text-heading_large">Favorite Holidays </div>
+    <template if:true={showHolidays}>
+        <div>
+            <template for:each={favoriteHolidays} for:item="holiday">
+                <div key={holiday.name}>
+                    <c-favorite-tile day={holiday}></c-favorite-tile>
+                </div>
+            </template>
+        </div>
+    </template>
+    <template if:false={showHolidays}>
+        <c-holiday-not-found not-found-label="You don't have any favorite holidays" image-style="camping"></c-holiday-not-found>
+    </template>
+</template>

@@ -1,0 +1,21 @@
+<template>
+    <div class="slds-box slds-p-around_none slds-m-top_x-small slds-m-bottom_medium slds-m-horizontal_none">
+        <lightning-layout>
+            <lightning-layout-item padding="around-small">
+                <lightning-button-icon-stateful icon-name="utility:favorite" selected={liked} alternative-text="Favorite"
+                    onclick={handleToggle}>
+                </lightning-button-icon-stateful>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" size="1">
+                <lightning-badge label={day.date.datetime.day} class="slds-theme_success">
+                </lightning-badge>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" size="2">
+                {day.name}
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" size="6">
+                {day.description}
+            </lightning-layout-item>
+        </lightning-layout>
+    </div>
+</template>
