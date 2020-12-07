@@ -17,7 +17,6 @@ export default class HolidayList extends LightningElement {
   }
 
   connectedCallback() {
-    console.log('getting user favorites')
     //get existing holidays from user 
     this.getUserFavorites();
   }
@@ -51,7 +50,6 @@ export default class HolidayList extends LightningElement {
   
   // Compare list of holidays with favorites to update stateful button icon
   checkNsetFavorite(){
-    console.log('check n set favorites');
     const holdiaykeys  = this.favoriteHolidays.map(holiday => holiday.name)
     // shallow copy create proxy object array which are immutable, 
     // need to JSON parse / stringify
@@ -65,7 +63,6 @@ export default class HolidayList extends LightningElement {
       }
     })
     this.holidays = [...modifHolidays];
-    console.log(this.holidays);
   }
 
 }
