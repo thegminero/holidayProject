@@ -1,18 +1,64 @@
-# Salesforce DX Project: Next Steps
+## Holiday Picker Component
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+![Holiday Picker](/images/holidayFavorites.png)
 
-## How Do You Plan to Deploy Your Changes?
+This project contains components for building a holiday viewer component where a suer can select
+from a list of available holidays and add to their favorites.
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+## Seting up your Environment using Salesforce DX
 
-## Configure Your Salesforce DX Project
+0. Get Started with Visual Studio Code. Follow the steps in the [Quick Start: Visual Studio Code for Salesforce Development](https://trailhead.salesforce.com/content/learn/projects/quickstart-vscode-salesforce) Trailhead project. The steps include:
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+-  Install Visual Studio Code
+-  Install the Salesforce CLI
+-  Use VS Code for Salesforce DEvelopment  
 
-## Read All About It
+1. Set up your environment. Follow the steps in the [Quick Start: App Development with Salesforce DX](https://trailhead.salesforce.com/en/content/learn/modules/sfdx_app_dev) Trailhead module. The steps include:
 
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+-   Salesforce DX
+-   Create an App
+-   Build an App Using the Salesfsorce CLI
+-   Convert and Deploy an Existing App
+
+2. Authenticate with your hub org and provide it with an alias (**myDevHub** in the command below):
+
+```
+sfdx force:auth:web:login -d -a myDevHub
+```
+
+3. Clone the repository:
+
+```
+git clone https://github.com/thegminero/holidayProject.git
+cd holidayProject
+```
+
+4. Create a scratch org and provide it with an alias (**favoriteHolidays** in the command below):
+
+```
+sfdx force:org:create -s -f config/project-scratch-def.json -a favoriteHolidays
+```
+
+5. Push the app to your scratch org:
+
+```
+sfdx force:source:push
+```
+
+6. Open the scratch org:
+
+```
+sfdx force:org:open
+```
+
+7. In **Setup**, under **User**:
+
+ - Ensure that the user object has a custom field favorite holidays
+
+
+8. Open the User Holiday's App
+
+![Holiday Picker](/images/holidayApp.png)
+
+
+9. Enjoy!
