@@ -1,0 +1,10 @@
+[
+    {
+        "sobject": "calendarific_key__mdt",
+        "saveRefs": true,
+        "resolveRefs": false,
+        "files": [
+            "data-calendarific_key__mdts.json"
+        ]
+    }
+]
