@@ -7,13 +7,15 @@ export default class HolidayTile extends LightningElement {
     @api readonly;
     
     handleToggle() {
-        if (!this.readonly) {
+        try {
             this.liked = !this.liked;
-            let selectedDay = {...this.day };
+            let selectedDay = { ...this.day };
             selectedDay['favorite'] = this.liked
             const selectedDateEvent = new CustomEvent('togglefavorite', { detail: selectedDay });
             this.dispatchEvent(selectedDateEvent);
         }
-
+        catch (e) {
+            console.log(e.message)
+        }
     }
 }
